@@ -125,6 +125,7 @@ const ContactForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder="John Doe"
                   className={`w-full p-3 rounded-md border ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} bg-white dark:bg-gray-700 text-gray-900 dark:text-white`}
                 />
                 {errors.name && <p className="mt-1 text-red-500 text-sm">{errors.name}</p>}
@@ -138,6 +139,7 @@ const ContactForm = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="your.email@company.com"
                   className={`w-full p-3 rounded-md border ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} bg-white dark:bg-gray-700 text-gray-900 dark:text-white`}
                 />
                 {errors.email && <p className="mt-1 text-red-500 text-sm">{errors.email}</p>}
@@ -151,6 +153,7 @@ const ContactForm = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
+                  placeholder="Your Company, Inc."
                   className={`w-full p-3 rounded-md border ${errors.company ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} bg-white dark:bg-gray-700 text-gray-900 dark:text-white`}
                 />
                 {errors.company && <p className="mt-1 text-red-500 text-sm">{errors.company}</p>}
@@ -182,6 +185,7 @@ const ContactForm = () => {
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="Tell us about the software licenses you're looking to sell..."
                 className="w-full p-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               ></textarea>
             </div>
