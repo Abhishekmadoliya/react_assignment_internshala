@@ -116,18 +116,10 @@ This site can be deployed to various platforms:
 
 - **Vercel**: Recommended for simplicity
 - **Netlify**: Great for easy deployment and preview environments
-- **GitHub Pages**: Works well for static sites
 
-## Future Enhancements
 
-- Add more interactive elements to the How It Works section
-- Implement server-side form handling
-- Create additional pages (About, Pricing, Blog)
-- Add internationalization (i18n) support
 
-## License
 
-This project is available under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
