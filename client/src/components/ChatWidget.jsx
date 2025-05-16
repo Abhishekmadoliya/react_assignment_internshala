@@ -9,14 +9,26 @@ const ChatWidget = () => {
   ]);
   const [newMessage, setNewMessage] = useState('');
 
-  // Predefined responses for the AI assistant
+  // Predefined responses 
   const botResponses = [
     "Thanks for your message! Our team will get back to you shortly.",
     "I'd be happy to help you sell your software licenses. Could you tell me what type of licenses you have?",
     "SoftSell typically processes payments within 48 hours of verifying your licenses.",
     "We accept all major software licenses, including Microsoft, Adobe, AutoCAD, and many more!",
     "Our valuation process is automated and considers current market demand for your specific licenses.",
-    "Feel free to call us at +1 (555) 123-4567 for more immediate assistance."
+    "Feel free to call us at 124563254 for more immediate assistance."
+  ];
+
+  // Fallback message 
+  const fallbackMessage = "I'm not sure I understand. Could you please provide more details or try one of the suggested topics below?";
+
+  // Predefined prompt 
+  const promptSuggestions = [
+    "How do I sell my licenses?",
+    "What payment methods do you accept?",
+    "How long does the process take?",
+    "What types of software do you buy?",
+    "How do you determine the price?"
   ];
 
   const toggleChat = () => {
@@ -26,9 +38,14 @@ const ChatWidget = () => {
   const handleSendMessage = (e) => {
     e.preventDefault();
     
-    if (newMessage.trim() === '') return;
+    if (newMessage.trim() === '') {
+      setMessages(prevMessages => [
+        ...prevMessages,
+        { text: fallbackMessage, sender: 'bot' }
+      ]);
+      return;
+    }
     
-    // Add user message
     const updatedMessages = [
       ...messages,
       { text: newMessage, sender: 'user' }
@@ -37,7 +54,21 @@ const ChatWidget = () => {
     setMessages(updatedMessages);
     setNewMessage('');
     
-    // Simulate AI response after a short delay
+    setTimeout(() => {
+      const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+      setMessages(prevMessages => [
+        ...prevMessages,
+        { text: randomResponse, sender: 'bot' }
+      ]);
+    }, 1000);
+  };
+
+  const handlePromptClick = (prompt) => {
+    setMessages(prevMessages => [
+      ...prevMessages,
+      { text: prompt, sender: 'user' }
+    ]);
+    
     setTimeout(() => {
       const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
       setMessages(prevMessages => [
@@ -95,6 +126,24 @@ const ChatWidget = () => {
                   {message.text}
                 </div>
               ))}
+              
+              {/* Display prompt suggestions */}
+              {messages.length === 1 && (
+                <div className="mt-2 space-y-2">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Try asking about:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {promptSuggestions.map((prompt, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handlePromptClick(prompt)}
+                        className="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white text-sm px-3 py-1 rounded-full hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors"
+                      >
+                        {prompt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
             
             <form onSubmit={handleSendMessage} className="p-4 border-t dark:border-gray-600 bg-white dark:bg-gray-800 flex">
