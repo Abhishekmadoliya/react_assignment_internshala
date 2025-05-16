@@ -9,7 +9,6 @@ const ChatWidget = () => {
   ]);
   const [newMessage, setNewMessage] = useState('');
 
-  // Predefined responses 
   const botResponses = [
     "Thanks for your message! Our team will get back to you shortly.",
     "I'd be happy to help you sell your software licenses. Could you tell me what type of licenses you have?",
@@ -19,10 +18,8 @@ const ChatWidget = () => {
     "Feel free to call us at 124563254 for more immediate assistance."
   ];
 
-  // Fallback message 
   const fallbackMessage = "I'm not sure I understand. Could you please provide more details or try one of the suggested topics below?";
 
-  // Predefined prompt 
   const promptSuggestions = [
     "How do I sell my licenses?",
     "What payment methods do you accept?",
@@ -127,7 +124,6 @@ const ChatWidget = () => {
                 </div>
               ))}
               
-              {/* Display prompt suggestions */}
               {messages.length === 1 && (
                 <div className="mt-2 space-y-2">
                   <p className="text-sm text-gray-500 dark:text-gray-400">Try asking about:</p>

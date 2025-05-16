@@ -1,4 +1,8 @@
-﻿# SoftSell - Software License Marketplace
+﻿## Live Demo
+
+Check out the live version here: [https://softsell.vercel.app](https://react-assignment-internshala.vercel.app/)
+
+# SoftSell - Software License Marketplace
 
 A modern, responsive single-page marketing website for SoftSell, a fictional company that helps businesses monetize their surplus software licenses.
 
@@ -14,6 +18,10 @@ A modern, responsive single-page marketing website for SoftSell, a fictional com
 ## Overview
 
 This project is a React-based marketing landing page for SoftSell, featuring a clean, modern design with interactive elements and responsive layout. It serves as a demonstration of frontend development skills using React and Tailwind CSS.
+
+## Time Spent
+
+The total time spent on this assignment is **2 days**, including planning, development, testing, and refinements.
 
 ## Features
 
@@ -77,6 +85,10 @@ client/
 - **Animations**: Subtle animations to enhance user experience without being distracting
 - **Dark Mode**: Complete dark theme implementation for user preference
 
+- **SEO Optimized**: Meta tags and page title for better discoverability
+- **Favicon**: Custom favicon added for branding
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -84,11 +96,13 @@ client/
 - Node.js (v14+)
 - npm 
 
+
+
 ### Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/softsell.git
+   git clone https://github.com/Abhishekmadoliya/react_assignment_internshala.git
    cd softsell
    ```
 
@@ -112,10 +126,9 @@ client/
 
 ## Deployment
 
-This site can be deployed to various platforms:
+The site is deployed on:
 
 - **Vercel**: Recommended for simplicity
-- **Netlify**: Great for easy deployment and preview environments
 
 
 
@@ -123,6 +136,6 @@ This site can be deployed to various platforms:
 
 ## Acknowledgements
 
-- Design inspiration from modern SaaS landing pages
+- Design inspiration from modern landing pages
 - Icons provided by [React Icons](https://react-icons.github.io/react-icons/)
 - Animations powered by [Framer Motion](https://www.framer.com/motion/)
